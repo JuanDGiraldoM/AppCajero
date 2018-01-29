@@ -49,7 +49,7 @@ namespace AppCajero
             {
                 Program.connection = oleDbConnection.ConnectionString;
                 Thread.Sleep(3000);
-                new FrmMain().Show();
+                new FrmCedula().Show();
                 Hide();
 
             }, null);

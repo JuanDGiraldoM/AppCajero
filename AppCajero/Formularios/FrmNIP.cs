@@ -16,5 +16,11 @@ namespace AppCajero.Formularios
         {
             InitializeComponent();
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            new FrmMain().Show();
+            Hide();
+        }
     }
 }

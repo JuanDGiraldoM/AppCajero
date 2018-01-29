@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace AppCajero.Formularios
 {
-    public partial class FrmMain : Form
+    public partial class FrmCedula : Form
     {
-        public FrmMain()
+        public FrmCedula()
         {
             InitializeComponent();
-        }
-
-        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnConsultarSaldo_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
