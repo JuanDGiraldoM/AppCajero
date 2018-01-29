@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,27 @@ namespace AppCajero.Formularios
 {
     public partial class FrmMain : Form
     {
+        string cedula;
+
         public FrmMain(string cedula)
         {
             InitializeComponent();
+            this.cedula = cedula;
+            oleDbConnection1.ConnectionString = Program.connection;
+            oleDbConnection1.Open();
+            oleDbDataAdapter1.SelectCommand.CommandText = "select nombre from Clientes where cedula = '" + cedula + "'";
+            oleDbDataAdapter1.SelectCommand.Connection = oleDbConnection1;
+            OleDbDataReader usuario = oleDbDataAdapter1.SelectCommand.ExecuteReader();
+
+            if (usuario.Read())
+            {
+                lblNombre.Text = usuario["nombre"].ToString();
+            }
+            else
+            {
+                Console.WriteLine("Ha ocurrido un error con la cédula");
+            }
+            oleDbConnection1.Close();
         }
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
