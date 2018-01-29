@@ -35,18 +35,19 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.lblNombre = new System.Windows.Forms.Label();
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
+            this.oleDbConnection1 = new System.Data.OleDb.OleDbConnection();
             this.oleDbUpdateCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDeleteCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDataAdapter1 = new System.Data.OleDb.OleDbDataAdapter();
-            this.oleDbConnection1 = new System.Data.OleDb.OleDbConnection();
             this.btnTransferencia = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnConsultarSaldo
             // 
-            this.btnConsultarSaldo.Location = new System.Drawing.Point(113, 132);
+            this.btnConsultarSaldo.Location = new System.Drawing.Point(44, 47);
+            this.btnConsultarSaldo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConsultarSaldo.Name = "btnConsultarSaldo";
-            this.btnConsultarSaldo.Size = new System.Drawing.Size(158, 23);
+            this.btnConsultarSaldo.Size = new System.Drawing.Size(237, 35);
             this.btnConsultarSaldo.TabIndex = 0;
             this.btnConsultarSaldo.Text = "Consultar Saldo";
             this.btnConsultarSaldo.UseVisualStyleBackColor = true;
@@ -54,18 +55,20 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(113, 182);
+            this.button2.Location = new System.Drawing.Point(44, 114);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(158, 23);
+            this.button2.Size = new System.Drawing.Size(237, 35);
             this.button2.TabIndex = 1;
             this.button2.Text = "Retirar Efectivo";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // btnActualizarContrasena
             // 
-            this.btnActualizarContrasena.Location = new System.Drawing.Point(113, 237);
+            this.btnActualizarContrasena.Location = new System.Drawing.Point(44, 179);
+            this.btnActualizarContrasena.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnActualizarContrasena.Name = "btnActualizarContrasena";
-            this.btnActualizarContrasena.Size = new System.Drawing.Size(158, 23);
+            this.btnActualizarContrasena.Size = new System.Drawing.Size(237, 35);
             this.btnActualizarContrasena.TabIndex = 2;
             this.btnActualizarContrasena.Text = "Actualizar Contraseña";
             this.btnActualizarContrasena.UseVisualStyleBackColor = true;
@@ -75,6 +78,7 @@
             // 
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
@@ -82,15 +86,21 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(12, 439);
+            this.lblNombre.Location = new System.Drawing.Point(18, 675);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(0, 13);
+            this.lblNombre.Size = new System.Drawing.Size(0, 20);
             this.lblNombre.TabIndex = 4;
             // 
             // oleDbSelectCommand1
             // 
             this.oleDbSelectCommand1.CommandText = "SELECT        cedula, nombre\r\nFROM            Clientes";
             this.oleDbSelectCommand1.Connection = this.oleDbConnection1;
+            // 
+            // oleDbConnection1
+            // 
+            this.oleDbConnection1.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bin\\Debug\\Database." +
+    "accdb";
             // 
             // oleDbUpdateCommand1
             // 
@@ -124,16 +134,12 @@
                         new System.Data.Common.DataColumnMapping("nombre", "nombre")})});
             this.oleDbDataAdapter1.UpdateCommand = this.oleDbUpdateCommand1;
             // 
-            // oleDbConnection1
-            // 
-            this.oleDbConnection1.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bin\\Debug\\Database." +
-    "accdb";
-            // 
             // btnTransferencia
             // 
-            this.btnTransferencia.Location = new System.Drawing.Point(113, 292);
+            this.btnTransferencia.Location = new System.Drawing.Point(44, 239);
+            this.btnTransferencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTransferencia.Name = "btnTransferencia";
-            this.btnTransferencia.Size = new System.Drawing.Size(158, 23);
+            this.btnTransferencia.Size = new System.Drawing.Size(237, 35);
             this.btnTransferencia.TabIndex = 5;
             this.btnTransferencia.Text = "Realizar Transferencia";
             this.btnTransferencia.UseVisualStyleBackColor = true;
@@ -141,7 +147,7 @@
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.btnTransferencia);
@@ -150,8 +156,10 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnConsultarSaldo);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AppCajero";
