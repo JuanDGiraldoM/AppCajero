@@ -38,10 +38,10 @@
             this.errorContrasena = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorConfirmacion = new System.Windows.Forms.ErrorProvider(this.components);
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
+            this.oleDbConnection = new System.Data.OleDb.OleDbConnection();
             this.oleDbUpdateCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDeleteCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDataAdapter = new System.Data.OleDb.OleDbDataAdapter();
-            this.oleDbConnection = new System.Data.OleDb.OleDbConnection();
             ((System.ComponentModel.ISupportInitialize)(this.errorContrasena)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorConfirmacion)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +55,7 @@
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // LblConfirmacionContraseña
             // 
@@ -109,6 +110,11 @@
             this.oleDbSelectCommand1.CommandText = "SELECT        cedula, contrasena\r\nFROM            Clientes";
             this.oleDbSelectCommand1.Connection = this.oleDbConnection;
             // 
+            // oleDbConnection
+            // 
+            this.oleDbConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bin\\Debug\\Database." +
+    "accdb";
+            // 
             // oleDbUpdateCommand1
             // 
             this.oleDbUpdateCommand1.CommandText = "UPDATE `Clientes` SET `cedula` = ?, `contrasena` = ? WHERE ((`cedula` = ?) AND ((" +
@@ -141,11 +147,6 @@
                         new System.Data.Common.DataColumnMapping("contrasena", "contrasena")})});
             this.oleDbDataAdapter.UpdateCommand = this.oleDbUpdateCommand1;
             // 
-            // oleDbConnection
-            // 
-            this.oleDbConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bin\\Debug\\Database." +
-    "accdb";
-            // 
             // FrmActualizarContrasena
             // 
             this.AcceptButton = this.btnAceptar;
@@ -163,6 +164,7 @@
             this.Name = "FrmActualizarContrasena";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar Contraseña";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmActualizarContrasena_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.errorContrasena)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorConfirmacion)).EndInit();
             this.ResumeLayout(false);

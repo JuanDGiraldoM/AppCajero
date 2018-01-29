@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\FrmActualizarContrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmActualizarContrasena.Designer.cs">
+      <DependentUpon>FrmActualizarContrasena.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmCedula.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\FrmActualizarContrasena.resx">
+      <DependentUpon>FrmActualizarContrasena.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCedula.resx">
       <DependentUpon>FrmCedula.cs</DependentUpon>
     </EmbeddedResource>

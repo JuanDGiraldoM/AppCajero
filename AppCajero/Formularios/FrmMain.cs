@@ -45,5 +45,11 @@ namespace AppCajero.Formularios
         {
 
         }
+
+        private void btnActualizarContrasena_Click(object sender, EventArgs e)
+        {
+            new FrmActualizarContrasena(this, cedula).Show();
+            SetVisibleCore(false);
+        }
     }
 }

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btnConsultarSaldo = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnActualizarContrasena = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.lblNombre = new System.Windows.Forms.Label();
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
@@ -61,14 +61,15 @@
             this.button2.Text = "Retirar Efectivo";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnActualizarContrasena
             // 
-            this.button3.Location = new System.Drawing.Point(113, 237);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(158, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Actualizar Contraseña";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnActualizarContrasena.Location = new System.Drawing.Point(113, 237);
+            this.btnActualizarContrasena.Name = "btnActualizarContrasena";
+            this.btnActualizarContrasena.Size = new System.Drawing.Size(158, 23);
+            this.btnActualizarContrasena.TabIndex = 2;
+            this.btnActualizarContrasena.Text = "Actualizar Contraseña";
+            this.btnActualizarContrasena.UseVisualStyleBackColor = true;
+            this.btnActualizarContrasena.Click += new System.EventHandler(this.btnActualizarContrasena_Click);
             // 
             // menuStrip1
             // 
@@ -144,7 +145,7 @@
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.btnTransferencia);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnActualizarContrasena);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnConsultarSaldo);
             this.Controls.Add(this.menuStrip1);
@@ -163,7 +164,7 @@
 
         private System.Windows.Forms.Button btnConsultarSaldo;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnActualizarContrasena;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label lblNombre;
         private System.Data.OleDb.OleDbCommand oleDbSelectCommand1;
