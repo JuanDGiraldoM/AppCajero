@@ -8,6 +8,10 @@ namespace AppCajero
 {
     static class Program
     {
+
+        public static string path = Application.StartupPath;
+
+
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
@@ -16,7 +20,7 @@ namespace AppCajero
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new SplashScreen());
         }
     }
 }
