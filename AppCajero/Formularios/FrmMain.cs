@@ -57,5 +57,11 @@ namespace AppCajero.Formularios
             new FrmTransferencia(this, cedula).Show();
             SetVisibleCore(false);
         }
+
+        private void btnRetiro_Click(object sender, EventArgs e)
+        {
+            new FrmRetiro(this, cedula).Show();
+            SetVisibleCore(false);
+        }
     }
 }

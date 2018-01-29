@@ -69,6 +69,12 @@
     <Compile Include="Formularios\FrmNIP.Designer.cs">
       <DependentUpon>FrmNIP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmRetiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmRetiro.Designer.cs">
+      <DependentUpon>FrmRetiro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmTransferencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmNIP.resx">
       <DependentUpon>FrmNIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmRetiro.resx">
+      <DependentUpon>FrmRetiro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmTransferencia.resx">
       <DependentUpon>FrmTransferencia.cs</DependentUpon>

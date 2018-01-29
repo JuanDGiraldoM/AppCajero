@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btnConsultarSaldo = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRetiro = new System.Windows.Forms.Button();
             this.btnActualizarContrasena = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -53,15 +53,16 @@
             this.btnConsultarSaldo.UseVisualStyleBackColor = true;
             this.btnConsultarSaldo.Click += new System.EventHandler(this.btnConsultarSaldo_Click);
             // 
-            // button2
+            // btnRetiro
             // 
-            this.button2.Location = new System.Drawing.Point(44, 114);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(237, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Retirar Efectivo";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRetiro.Location = new System.Drawing.Point(44, 114);
+            this.btnRetiro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRetiro.Name = "btnRetiro";
+            this.btnRetiro.Size = new System.Drawing.Size(237, 35);
+            this.btnRetiro.TabIndex = 1;
+            this.btnRetiro.Text = "Retirar Efectivo";
+            this.btnRetiro.UseVisualStyleBackColor = true;
+            this.btnRetiro.Click += new System.EventHandler(this.btnRetiro_Click);
             // 
             // btnActualizarContrasena
             // 
@@ -153,7 +154,7 @@
             this.Controls.Add(this.btnTransferencia);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnActualizarContrasena);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnRetiro);
             this.Controls.Add(this.btnConsultarSaldo);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -172,7 +173,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnConsultarSaldo;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRetiro;
         private System.Windows.Forms.Button btnActualizarContrasena;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label lblNombre;
