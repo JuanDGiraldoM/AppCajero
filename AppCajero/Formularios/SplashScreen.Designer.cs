@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashScreen));
-            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.oleDbConnection = new System.Data.OleDb.OleDbConnection();
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbInsertCommand1 = new System.Data.OleDb.OleDbCommand();
@@ -57,14 +56,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SplashScreen";
+            this.Text = "AppCajero";
+            this.Load += new System.EventHandler(this.SplashScreen_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.ComponentModel.BackgroundWorker backgroundWorker;
         private System.Data.OleDb.OleDbConnection oleDbConnection;
         private System.Data.OleDb.OleDbCommand oleDbSelectCommand1;
         private System.Data.OleDb.OleDbCommand oleDbInsertCommand1;

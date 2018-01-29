@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppCajero.Formularios;
 
 namespace AppCajero
 {
@@ -10,6 +11,7 @@ namespace AppCajero
     {
 
         public static string path = Application.StartupPath;
+        public static string connection;
 
 
         /// <summary>
