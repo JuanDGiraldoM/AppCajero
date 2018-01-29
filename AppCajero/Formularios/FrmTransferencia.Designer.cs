@@ -42,8 +42,10 @@
             this.errorDestino = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorValor = new System.Windows.Forms.ErrorProvider(this.components);
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
-            this.oleDbDataAdapter = new System.Data.OleDb.OleDbDataAdapter();
             this.oleDbConnection = new System.Data.OleDb.OleDbConnection();
+            this.oleDbDataAdapter = new System.Data.OleDb.OleDbDataAdapter();
+            this.oleDbCommand1 = new System.Data.OleDb.OleDbCommand();
+            this.oleDbCommand2 = new System.Data.OleDb.OleDbCommand();
             ((System.ComponentModel.ISupportInitialize)(this.errorDestino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorValor)).BeginInit();
             this.SuspendLayout();
@@ -153,8 +155,14 @@
             this.oleDbSelectCommand1.CommandText = resources.GetString("oleDbSelectCommand1.CommandText");
             this.oleDbSelectCommand1.Connection = this.oleDbConnection;
             // 
+            // oleDbConnection
+            // 
+            this.oleDbConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bin\\Debug\\Database." +
+    "accdb";
+            // 
             // oleDbDataAdapter
             // 
+            this.oleDbDataAdapter.InsertCommand = this.oleDbCommand2;
             this.oleDbDataAdapter.SelectCommand = this.oleDbSelectCommand1;
             this.oleDbDataAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
             new System.Data.Common.DataTableMapping("Table", "Clientes", new System.Data.Common.DataColumnMapping[] {
@@ -175,11 +183,7 @@
                         new System.Data.Common.DataColumnMapping("cuenta_destino", "cuenta_destino"),
                         new System.Data.Common.DataColumnMapping("valor_transferencia", "valor_transferencia"),
                         new System.Data.Common.DataColumnMapping("fecha", "fecha")})});
-            // 
-            // oleDbConnection
-            // 
-            this.oleDbConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bin\\Debug\\Database." +
-    "accdb";
+            this.oleDbDataAdapter.UpdateCommand = this.oleDbCommand1;
             // 
             // FrmTransferencia
             // 
@@ -227,5 +231,7 @@
         private System.Data.OleDb.OleDbCommand oleDbSelectCommand1;
         private System.Data.OleDb.OleDbConnection oleDbConnection;
         private System.Data.OleDb.OleDbDataAdapter oleDbDataAdapter;
+        private System.Data.OleDb.OleDbCommand oleDbCommand2;
+        private System.Data.OleDb.OleDbCommand oleDbCommand1;
     }
 }

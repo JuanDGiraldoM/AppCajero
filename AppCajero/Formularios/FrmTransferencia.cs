@@ -13,16 +13,15 @@ namespace AppCajero.Formularios
 {
     public partial class FrmTransferencia : Form
     {
-        int tipo = 0;
         FrmMain frmMain;
         string cedula;
 
-        public FrmTransferencia(FrmMain frmMain, string cedula, string conexion)
+        public FrmTransferencia(FrmMain frmMain, string cedula)
         {
             InitializeComponent();
             this.cedula = cedula;
             this.frmMain = frmMain;
-            oleDbConnection.ConnectionString = conexion;
+            oleDbConnection.ConnectionString = Program.connection;
             Conexion();
         }
 

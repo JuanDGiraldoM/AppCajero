@@ -97,5 +97,10 @@ namespace AppCajero.Formularios
         {
             main.Visible = true;
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

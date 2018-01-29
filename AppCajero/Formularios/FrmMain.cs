@@ -51,5 +51,11 @@ namespace AppCajero.Formularios
             new FrmActualizarContrasena(this, cedula).Show();
             SetVisibleCore(false);
         }
+
+        private void btnTransferencia_Click(object sender, EventArgs e)
+        {
+            new FrmTransferencia(this, cedula).Show();
+            SetVisibleCore(false);
+        }
     }
 }

@@ -137,6 +137,7 @@
             this.btnTransferencia.TabIndex = 5;
             this.btnTransferencia.Text = "Realizar Transferencia";
             this.btnTransferencia.UseVisualStyleBackColor = true;
+            this.btnTransferencia.Click += new System.EventHandler(this.btnTransferencia_Click);
             // 
             // FrmMain
             // 
