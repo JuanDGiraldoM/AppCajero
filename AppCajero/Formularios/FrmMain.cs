@@ -43,7 +43,8 @@ namespace AppCajero.Formularios
 
         private void btnConsultarSaldo_Click(object sender, EventArgs e)
         {
-
+            new FrmConsultarSaldo(this, cedula).Show();
+            SetVisibleCore(false);
         }
 
         private void btnActualizarContrasena_Click(object sender, EventArgs e)

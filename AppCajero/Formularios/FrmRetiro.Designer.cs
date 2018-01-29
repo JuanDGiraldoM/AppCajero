@@ -180,7 +180,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmRetiro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmRetiro";
+            this.Text = "Transacción de Retiro";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmRetiro_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.errorValor)).EndInit();
             this.ResumeLayout(false);
