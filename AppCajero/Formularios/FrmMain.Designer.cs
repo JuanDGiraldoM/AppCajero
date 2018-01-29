@@ -39,6 +39,7 @@
             this.oleDbDeleteCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDataAdapter1 = new System.Data.OleDb.OleDbDataAdapter();
             this.oleDbConnection1 = new System.Data.OleDb.OleDbConnection();
+            this.btnTransferencia = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnConsultarSaldo
@@ -127,11 +128,21 @@
             this.oleDbConnection1.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bin\\Debug\\Database." +
     "accdb";
             // 
+            // btnTransferencia
+            // 
+            this.btnTransferencia.Location = new System.Drawing.Point(113, 292);
+            this.btnTransferencia.Name = "btnTransferencia";
+            this.btnTransferencia.Size = new System.Drawing.Size(158, 23);
+            this.btnTransferencia.TabIndex = 5;
+            this.btnTransferencia.Text = "Realizar Transferencia";
+            this.btnTransferencia.UseVisualStyleBackColor = true;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.btnTransferencia);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -160,5 +171,6 @@
         private System.Data.OleDb.OleDbCommand oleDbUpdateCommand1;
         private System.Data.OleDb.OleDbCommand oleDbDeleteCommand1;
         private System.Data.OleDb.OleDbDataAdapter oleDbDataAdapter1;
+        private System.Windows.Forms.Button btnTransferencia;
     }
 }

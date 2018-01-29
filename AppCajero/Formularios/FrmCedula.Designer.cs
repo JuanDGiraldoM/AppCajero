@@ -35,10 +35,10 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.errorCedula = new System.Windows.Forms.ErrorProvider(this.components);
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
+            this.oleDbConnection1 = new System.Data.OleDb.OleDbConnection();
             this.oleDbUpdateCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDeleteCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDataAdapter1 = new System.Data.OleDb.OleDbDataAdapter();
-            this.oleDbConnection1 = new System.Data.OleDb.OleDbConnection();
             ((System.ComponentModel.ISupportInitialize)(this.errorCedula)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +80,11 @@
             this.oleDbSelectCommand1.CommandText = "SELECT        cedula\r\nFROM            Clientes";
             this.oleDbSelectCommand1.Connection = this.oleDbConnection1;
             // 
+            // oleDbConnection1
+            // 
+            this.oleDbConnection1.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bin\\Debug\\Database." +
+    "accdb";
+            // 
             // oleDbUpdateCommand1
             // 
             this.oleDbUpdateCommand1.CommandText = "UPDATE `Clientes` SET `cedula` = ? WHERE ((`cedula` = ?))";
@@ -104,13 +109,9 @@
                         new System.Data.Common.DataColumnMapping("cedula", "cedula")})});
             this.oleDbDataAdapter1.UpdateCommand = this.oleDbUpdateCommand1;
             // 
-            // oleDbConnection1
-            // 
-            this.oleDbConnection1.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bin\\Debug\\Database." +
-    "accdb";
-            // 
             // FrmCedula
             // 
+            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 89);
