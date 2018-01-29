@@ -12,7 +12,7 @@ namespace AppCajero.Formularios
 {
     public partial class FrmMain : Form
     {
-        public FrmMain()
+        public FrmMain(string cedula)
         {
             InitializeComponent();
         }
