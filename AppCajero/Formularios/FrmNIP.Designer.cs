@@ -32,8 +32,8 @@
             this.txtClave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbConnection = new System.Data.OleDb.OleDbConnection();
             this.oleDbDataAdapter = new System.Data.OleDb.OleDbDataAdapter();
@@ -80,25 +80,28 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // button2
+            // btnBorrar
             // 
-            this.button2.Location = new System.Drawing.Point(229, 198);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 35);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Borrar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBorrar.Location = new System.Drawing.Point(229, 198);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(112, 35);
+            this.btnBorrar.TabIndex = 3;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
-            // button13
+            // btnCancelar
             // 
-            this.button13.Location = new System.Drawing.Point(229, 242);
-            this.button13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(112, 35);
-            this.button13.TabIndex = 14;
-            this.button13.Text = "Cancelar";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Location = new System.Drawing.Point(229, 242);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(112, 35);
+            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // oleDbSelectCommand1
             // 
@@ -139,128 +142,140 @@
             // 
             // btn1
             // 
+            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn1.Location = new System.Drawing.Point(52, 121);
             this.btn1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(45, 46);
             this.btn1.TabIndex = 24;
-            this.btn1.Text = "0";
             this.btn1.UseVisualStyleBackColor = true;
-            this.btn1.MouseEnter += new System.EventHandler(this.panel1_MouseHover);
-            this.btn1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
+            this.btn1.MouseEnter += new System.EventHandler(this.bntMouseHover);
+            this.btn1.MouseLeave += new System.EventHandler(this.btnMouseLeave);
             // 
             // btn2
             // 
+            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn2.Location = new System.Drawing.Point(105, 121);
             this.btn2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(45, 46);
             this.btn2.TabIndex = 25;
-            this.btn2.Text = "0";
             this.btn2.UseVisualStyleBackColor = true;
-            this.btn2.MouseEnter += new System.EventHandler(this.panel1_MouseHover);
-            this.btn2.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
+            this.btn2.MouseEnter += new System.EventHandler(this.bntMouseHover);
+            this.btn2.MouseLeave += new System.EventHandler(this.btnMouseLeave);
             // 
             // btn0
             // 
+            this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn0.Location = new System.Drawing.Point(105, 285);
             this.btn0.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(45, 46);
             this.btn0.TabIndex = 33;
-            this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = true;
-            this.btn0.MouseEnter += new System.EventHandler(this.panel1_MouseHover);
-            this.btn0.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.btn0.Click += new System.EventHandler(this.btn0_Click);
+            this.btn0.MouseEnter += new System.EventHandler(this.bntMouseHover);
+            this.btn0.MouseLeave += new System.EventHandler(this.btnMouseLeave);
             // 
             // btn6
             // 
+            this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn6.Location = new System.Drawing.Point(158, 174);
             this.btn6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(45, 46);
             this.btn6.TabIndex = 29;
-            this.btn6.Text = "0";
             this.btn6.UseVisualStyleBackColor = true;
-            this.btn6.MouseEnter += new System.EventHandler(this.panel1_MouseHover);
-            this.btn6.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
+            this.btn6.MouseEnter += new System.EventHandler(this.bntMouseHover);
+            this.btn6.MouseLeave += new System.EventHandler(this.btnMouseLeave);
             // 
             // btn9
             // 
+            this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn9.Location = new System.Drawing.Point(158, 229);
             this.btn9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(45, 46);
             this.btn9.TabIndex = 32;
-            this.btn9.Text = "0";
             this.btn9.UseVisualStyleBackColor = true;
-            this.btn9.MouseEnter += new System.EventHandler(this.panel1_MouseHover);
-            this.btn9.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
+            this.btn9.MouseEnter += new System.EventHandler(this.bntMouseHover);
+            this.btn9.MouseLeave += new System.EventHandler(this.btnMouseLeave);
             // 
             // btn3
             // 
+            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn3.Location = new System.Drawing.Point(158, 121);
             this.btn3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(45, 46);
             this.btn3.TabIndex = 26;
-            this.btn3.Text = "0";
             this.btn3.UseVisualStyleBackColor = true;
-            this.btn3.MouseEnter += new System.EventHandler(this.panel1_MouseHover);
-            this.btn3.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
+            this.btn3.MouseEnter += new System.EventHandler(this.bntMouseHover);
+            this.btn3.MouseLeave += new System.EventHandler(this.btnMouseLeave);
             // 
             // btn8
             // 
+            this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn8.Location = new System.Drawing.Point(105, 229);
             this.btn8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(45, 46);
             this.btn8.TabIndex = 31;
-            this.btn8.Text = "0";
             this.btn8.UseVisualStyleBackColor = true;
-            this.btn8.MouseEnter += new System.EventHandler(this.panel1_MouseHover);
-            this.btn8.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.btn8.Click += new System.EventHandler(this.btn8_Click);
+            this.btn8.MouseEnter += new System.EventHandler(this.bntMouseHover);
+            this.btn8.MouseLeave += new System.EventHandler(this.btnMouseLeave);
             // 
             // btn4
             // 
+            this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn4.Location = new System.Drawing.Point(52, 174);
             this.btn4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(45, 46);
             this.btn4.TabIndex = 27;
-            this.btn4.Text = "0";
             this.btn4.UseVisualStyleBackColor = true;
-            this.btn4.MouseEnter += new System.EventHandler(this.panel1_MouseHover);
-            this.btn4.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
+            this.btn4.MouseEnter += new System.EventHandler(this.bntMouseHover);
+            this.btn4.MouseLeave += new System.EventHandler(this.btnMouseLeave);
             // 
             // btn7
             // 
+            this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn7.Location = new System.Drawing.Point(52, 229);
             this.btn7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(45, 46);
             this.btn7.TabIndex = 30;
-            this.btn7.Text = "0";
             this.btn7.UseVisualStyleBackColor = true;
-            this.btn7.MouseEnter += new System.EventHandler(this.panel1_MouseHover);
-            this.btn7.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
+            this.btn7.MouseEnter += new System.EventHandler(this.bntMouseHover);
+            this.btn7.MouseLeave += new System.EventHandler(this.btnMouseLeave);
             // 
             // btn5
             // 
+            this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn5.Location = new System.Drawing.Point(105, 174);
             this.btn5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(45, 46);
             this.btn5.TabIndex = 28;
-            this.btn5.Text = "0";
             this.btn5.UseVisualStyleBackColor = true;
-            this.btn5.MouseEnter += new System.EventHandler(this.panel1_MouseHover);
-            this.btn5.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
+            this.btn5.MouseEnter += new System.EventHandler(this.bntMouseHover);
+            this.btn5.MouseLeave += new System.EventHandler(this.btnMouseLeave);
             // 
             // FrmNIP
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(373, 371);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btn2);
@@ -273,8 +288,8 @@
             this.Controls.Add(this.btn7);
             this.Controls.Add(this.btn5);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtClave);
@@ -296,8 +311,8 @@
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Data.OleDb.OleDbCommand oleDbSelectCommand1;
         private System.Data.OleDb.OleDbConnection oleDbConnection;
         private System.Data.OleDb.OleDbDataAdapter oleDbDataAdapter;

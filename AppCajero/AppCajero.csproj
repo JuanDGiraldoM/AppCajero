@@ -100,7 +100,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilidades\Utilidades.cs" />
+    <Compile Include="Utilidades.cs" />
     <EmbeddedResource Include="Formularios\FrmActualizarContrasena.resx">
       <DependentUpon>FrmActualizarContrasena.cs</DependentUpon>
     </EmbeddedResource>

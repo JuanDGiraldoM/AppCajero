@@ -14,7 +14,6 @@ namespace AppCajero.Formularios
     public partial class FrmMain : Form
     {
         string cedula;
-        public bool acceso { get; set; }
 
         public FrmMain(string cedula)
         {
@@ -44,33 +43,46 @@ namespace AppCajero.Formularios
 
         private void btnConsultarSaldo_Click(object sender, EventArgs e)
         {
-            new FrmConsultarSaldo(this, cedula).Show();
-            SetVisibleCore(false);
+            if (Autenticar())
+            {
+                new FrmConsultarSaldo(this, cedula).Show();
+                SetVisibleCore(false);
+            }
         }
 
         private void btnActualizarContrasena_Click(object sender, EventArgs e)
         {
-            new FrmActualizarContrasena(this, cedula).Show();
-            SetVisibleCore(false);
+            if (Autenticar())
+            {
+                new FrmActualizarContrasena(this, cedula).Show();
+                SetVisibleCore(false);
+            }
         }
 
         private void btnTransferencia_Click(object sender, EventArgs e)
         {
-            new FrmTransferencia(this, cedula).Show();
-            SetVisibleCore(false);
+            if (Autenticar())
+            {
+                new FrmTransferencia(this, cedula).Show();
+                SetVisibleCore(false);
+            }
         }
 
         private void btnRetiro_Click(object sender, EventArgs e)
         {
-            Autenticar();
-            new FrmRetiro(this, cedula).Show();
-            SetVisibleCore(false);
+            if (Autenticar())
+            {
+                new FrmRetiro(this, cedula).Show();
+                SetVisibleCore(false);
+            }
         }
 
-        public void Autenticar()
+        public bool Autenticar()
         {
-            new FrmNIP(this, cedula).Show();
-            SetVisibleCore(false);
+            FrmNIP frmNIP = new FrmNIP(this, cedula);
+            if (frmNIP.ShowDialog() == DialogResult.OK)
+                return true;
+            return false;
         }
     }
 }
