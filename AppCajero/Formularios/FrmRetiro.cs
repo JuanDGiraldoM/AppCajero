@@ -57,7 +57,7 @@ namespace AppCajero.Formularios
                         {
                             oleDbDataAdapter.UpdateCommand.CommandText = "update cuentas set saldo = " + saldo_cuenta + " where numero_cuenta = '" + cuenta_retiro + "'";
                             oleDbDataAdapter.UpdateCommand.ExecuteNonQuery();
-                            oleDbDataAdapter.InsertCommand.CommandText = "insert into retiros (cuenta, valor_retiro, fecha) values ('" + cuenta_retiro + "', '" + valor_retiro + "', '" + fecha + "')";
+                            oleDbDataAdapter.InsertCommand.CommandText = "insert into retiros (cuenta_retiro, valor_retiro, fecha) values ('" + cuenta_retiro + "', '" + valor_retiro + "', '" + fecha + "')";
                             oleDbDataAdapter.InsertCommand.ExecuteNonQuery();
 
                             MessageBox.Show("Retiro Exitoso", "Éxito");

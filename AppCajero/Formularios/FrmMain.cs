@@ -14,6 +14,7 @@ namespace AppCajero.Formularios
     public partial class FrmMain : Form
     {
         string cedula;
+        public bool acceso { get; set; }
 
         public FrmMain(string cedula)
         {
@@ -61,7 +62,14 @@ namespace AppCajero.Formularios
 
         private void btnRetiro_Click(object sender, EventArgs e)
         {
+            Autenticar();
             new FrmRetiro(this, cedula).Show();
+            SetVisibleCore(false);
+        }
+
+        public void Autenticar()
+        {
+            new FrmNIP(this, cedula).Show();
             SetVisibleCore(false);
         }
     }
