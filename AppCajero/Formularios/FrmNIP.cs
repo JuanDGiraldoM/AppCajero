@@ -51,8 +51,8 @@ namespace AppCajero.Formularios
         {
             numeros = new List<string>();
             for (int i = 0; i < 10; i++)
-                numeros[i] = i.ToString();
-            //numeros = Shuffle(numeros);
+                numeros.Add(i.ToString());
+            numeros = Utilidades.Utilidades.Shuffle(numeros);
         }
 
         private void Ocultar()
@@ -83,7 +83,7 @@ namespace AppCajero.Formularios
             btn9.Text = numeros[9];
         }
 
-        
+
     }
 
 
