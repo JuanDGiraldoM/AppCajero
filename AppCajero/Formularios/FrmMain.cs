@@ -48,10 +48,6 @@ namespace AppCajero.Formularios
                 new FrmConsultarSaldo(this, cedula).Show();
                 SetVisibleCore(false);
             }
-            else
-            {
-
-            }
         }
 
         private void btnActualizarContrasena_Click(object sender, EventArgs e)

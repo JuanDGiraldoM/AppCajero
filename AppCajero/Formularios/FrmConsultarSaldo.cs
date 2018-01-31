@@ -42,9 +42,8 @@ namespace AppCajero.Formularios
                 if (cuenta.Read())
                 {
                     saldo_cuenta = double.Parse(cuenta["saldo"].ToString());
-
-                    MessageBox.Show("Retiro Exitoso", "Éxito");
                     MessageBox.Show("Transacción Consulta de Saldo\n\nCuenta :   " + num_cuenta + "\tSaldo: " + saldo_cuenta.ToString("C") + "\nFecha: " + fecha, "Comprobante");
+                    Close();
 
                 }
                 else
