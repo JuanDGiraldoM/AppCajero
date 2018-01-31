@@ -41,22 +41,19 @@ namespace AppCajero.Formularios
 
             if (clave.Length == 4)
             {
-                using (MD5 md5hash = MD5.Create())
+                oleDbConnection.Open();
+                oleDbDataAdapter.SelectCommand.CommandText = "select * from Clientes where cedula = '" + cedula + "'";
+                oleDbDataAdapter.SelectCommand.Connection = oleDbConnection;
+                OleDbDataReader usuario = oleDbDataAdapter.SelectCommand.ExecuteReader();
+
+                usuario.Read();
+
+                if (usuario["bloqueado"].ToString() == "False")
                 {
-                    string clave_hash = Utilidades.GetMd5Hash(md5hash, clave);
-
-                    oleDbConnection.Open();
-                    oleDbDataAdapter.SelectCommand.CommandText = "select * from Clientes where cedula = '" + cedula + "'";
-                    oleDbDataAdapter.SelectCommand.Connection = oleDbConnection;
-                    OleDbDataReader usuario = oleDbDataAdapter.SelectCommand.ExecuteReader();
-
-                    usuario.Read();
-
-                    if (usuario["bloqueado"].ToString() == "False")
+                    string clave_consulta = this.clave == 2 ? "seg_clave" : "contrasena";
+                    using (MD5 mD5Hash = MD5.Create())
                     {
-                        string clave_consulta = this.clave==2? "seg_clave" : "contrasena";
-
-                        if (usuario[clave_consulta].ToString() == clave_hash)
+                        if (Utilidades.VerifyMd5Hash(mD5Hash, clave, usuario[clave_consulta].ToString()))
                         {
                             try
                             {
@@ -112,13 +109,14 @@ namespace AppCajero.Formularios
                             }
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Contraseña bloqueada", "Error");
-                        Close();
-                    }
-                    oleDbConnection.Close();
                 }
+                else
+                {
+                    MessageBox.Show("Contraseña bloqueada", "Error");
+                    Close();
+                }
+                oleDbConnection.Close();
+
             }
         }
 
