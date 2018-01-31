@@ -43,16 +43,20 @@ namespace AppCajero.Formularios
 
         private void btnConsultarSaldo_Click(object sender, EventArgs e)
         {
-            if (Autenticar())
+            if (Autenticar(1))
             {
                 new FrmConsultarSaldo(this, cedula).Show();
                 SetVisibleCore(false);
+            }
+            else
+            {
+
             }
         }
 
         private void btnActualizarContrasena_Click(object sender, EventArgs e)
         {
-            if (Autenticar())
+            if (Autenticar(2))
             {
                 new FrmActualizarContrasena(this, cedula).Show();
                 SetVisibleCore(false);
@@ -61,7 +65,7 @@ namespace AppCajero.Formularios
 
         private void btnTransferencia_Click(object sender, EventArgs e)
         {
-            if (Autenticar())
+            if (Autenticar(2))
             {
                 new FrmTransferencia(this, cedula).Show();
                 SetVisibleCore(false);
@@ -70,16 +74,16 @@ namespace AppCajero.Formularios
 
         private void btnRetiro_Click(object sender, EventArgs e)
         {
-            if (Autenticar())
+            if (Autenticar(1))
             {
                 new FrmRetiro(this, cedula).Show();
                 SetVisibleCore(false);
             }
         }
 
-        public bool Autenticar()
+        public bool Autenticar(int clave)
         {
-            FrmNIP frmNIP = new FrmNIP(this, cedula);
+            FrmNIP frmNIP = new FrmNIP(this, cedula, clave);
             if (frmNIP.ShowDialog() == DialogResult.OK)
                 return true;
             return false;

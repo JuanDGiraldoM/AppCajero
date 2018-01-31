@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNIP));
-            this.txtClave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
@@ -37,7 +37,6 @@
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbConnection = new System.Data.OleDb.OleDbConnection();
             this.oleDbDataAdapter = new System.Data.OleDb.OleDbDataAdapter();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn1 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn0 = new System.Windows.Forms.Button();
@@ -48,16 +47,12 @@
             this.btn4 = new System.Windows.Forms.Button();
             this.btn7 = new System.Windows.Forms.Button();
             this.btn5 = new System.Windows.Forms.Button();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.errorContrasena = new System.Windows.Forms.ErrorProvider(this.components);
+            this.oleDbCommand1 = new System.Data.OleDb.OleDbCommand();
+            this.oleDbCommand2 = new System.Data.OleDb.OleDbCommand();
+            ((System.ComponentModel.ISupportInitialize)(this.errorContrasena)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtClave
-            // 
-            this.txtClave.Location = new System.Drawing.Point(37, 62);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.ReadOnly = true;
-            this.txtClave.Size = new System.Drawing.Size(302, 26);
-            this.txtClave.TabIndex = 0;
             // 
             // label1
             // 
@@ -71,7 +66,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(229, 153);
+            this.btnAceptar.Location = new System.Drawing.Point(217, 114);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(112, 35);
@@ -82,7 +77,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(229, 198);
+            this.btnBorrar.Location = new System.Drawing.Point(217, 159);
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(112, 35);
@@ -94,7 +89,7 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(229, 242);
+            this.btnCancelar.Location = new System.Drawing.Point(217, 203);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(112, 35);
@@ -116,6 +111,7 @@
             // 
             // oleDbDataAdapter
             // 
+            this.oleDbDataAdapter.InsertCommand = this.oleDbCommand2;
             this.oleDbDataAdapter.SelectCommand = this.oleDbSelectCommand1;
             this.oleDbDataAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
             new System.Data.Common.DataTableMapping("Table", "Clientes", new System.Data.Common.DataColumnMapping[] {
@@ -131,19 +127,12 @@
                         new System.Data.Common.DataColumnMapping("numero_cuenta", "numero_cuenta"),
                         new System.Data.Common.DataColumnMapping("cedula_cliente", "cedula_cliente"),
                         new System.Data.Common.DataColumnMapping("saldo", "saldo")})});
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(373, 25);
-            this.toolStrip1.TabIndex = 16;
-            this.toolStrip1.Text = "toolStrip1";
+            this.oleDbDataAdapter.UpdateCommand = this.oleDbCommand1;
             // 
             // btn1
             // 
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn1.Location = new System.Drawing.Point(52, 121);
+            this.btn1.Location = new System.Drawing.Point(43, 100);
             this.btn1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(45, 46);
@@ -156,7 +145,7 @@
             // btn2
             // 
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn2.Location = new System.Drawing.Point(105, 121);
+            this.btn2.Location = new System.Drawing.Point(96, 100);
             this.btn2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(45, 46);
@@ -169,7 +158,7 @@
             // btn0
             // 
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn0.Location = new System.Drawing.Point(105, 285);
+            this.btn0.Location = new System.Drawing.Point(96, 264);
             this.btn0.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(45, 46);
@@ -182,7 +171,7 @@
             // btn6
             // 
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn6.Location = new System.Drawing.Point(158, 174);
+            this.btn6.Location = new System.Drawing.Point(149, 153);
             this.btn6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(45, 46);
@@ -195,7 +184,7 @@
             // btn9
             // 
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn9.Location = new System.Drawing.Point(158, 229);
+            this.btn9.Location = new System.Drawing.Point(149, 208);
             this.btn9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(45, 46);
@@ -208,7 +197,7 @@
             // btn3
             // 
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn3.Location = new System.Drawing.Point(158, 121);
+            this.btn3.Location = new System.Drawing.Point(149, 100);
             this.btn3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(45, 46);
@@ -221,7 +210,7 @@
             // btn8
             // 
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn8.Location = new System.Drawing.Point(105, 229);
+            this.btn8.Location = new System.Drawing.Point(96, 208);
             this.btn8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(45, 46);
@@ -234,7 +223,7 @@
             // btn4
             // 
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn4.Location = new System.Drawing.Point(52, 174);
+            this.btn4.Location = new System.Drawing.Point(43, 153);
             this.btn4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(45, 46);
@@ -247,7 +236,7 @@
             // btn7
             // 
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn7.Location = new System.Drawing.Point(52, 229);
+            this.btn7.Location = new System.Drawing.Point(43, 208);
             this.btn7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(45, 46);
@@ -260,7 +249,7 @@
             // btn5
             // 
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn5.Location = new System.Drawing.Point(105, 174);
+            this.btn5.Location = new System.Drawing.Point(96, 153);
             this.btn5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(45, 46);
@@ -270,13 +259,28 @@
             this.btn5.MouseEnter += new System.EventHandler(this.bntMouseHover);
             this.btn5.MouseLeave += new System.EventHandler(this.btnMouseLeave);
             // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasena.Location = new System.Drawing.Point(36, 61);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '*';
+            this.txtContrasena.ReadOnly = true;
+            this.txtContrasena.Size = new System.Drawing.Size(158, 26);
+            this.txtContrasena.TabIndex = 34;
+            // 
+            // errorContrasena
+            // 
+            this.errorContrasena.ContainerControl = this;
+            // 
             // FrmNIP
             // 
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(373, 371);
+            this.ClientSize = new System.Drawing.Size(361, 344);
+            this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn0);
@@ -287,12 +291,10 @@
             this.Controls.Add(this.btn4);
             this.Controls.Add(this.btn7);
             this.Controls.Add(this.btn5);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtClave);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -301,14 +303,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNIP";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNIP_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.errorContrasena)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnBorrar;
@@ -316,7 +317,6 @@
         private System.Data.OleDb.OleDbCommand oleDbSelectCommand1;
         private System.Data.OleDb.OleDbConnection oleDbConnection;
         private System.Data.OleDb.OleDbDataAdapter oleDbDataAdapter;
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Button btn0;
@@ -327,5 +327,9 @@
         private System.Windows.Forms.Button btn4;
         private System.Windows.Forms.Button btn7;
         private System.Windows.Forms.Button btn5;
+        private System.Windows.Forms.TextBox txtContrasena;
+        private System.Windows.Forms.ErrorProvider errorContrasena;
+        private System.Data.OleDb.OleDbCommand oleDbCommand2;
+        private System.Data.OleDb.OleDbCommand oleDbCommand1;
     }
 }
