@@ -27,7 +27,7 @@ namespace AppCajero.Formularios
 
             if (usuario.Read())
             {
-                lblNombre.Text = usuario["nombre"].ToString();
+                lblNombre.Text = "Bienvenido, " + usuario["nombre"].ToString();
             }
             else
             {
@@ -57,6 +57,7 @@ namespace AppCajero.Formularios
                 new FrmActualizarContrasena(this, cedula).Show();
                 SetVisibleCore(false);
             }
+
         }
 
         private void btnTransferencia_Click(object sender, EventArgs e)

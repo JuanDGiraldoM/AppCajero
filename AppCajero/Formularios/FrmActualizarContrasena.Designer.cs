@@ -48,20 +48,21 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.BackColor = System.Drawing.SystemColors.Control;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(72, 191);
+            this.btnAceptar.Location = new System.Drawing.Point(51, 180);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(85, 35);
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // LblConfirmacionContraseña
             // 
             this.LblConfirmacionContraseña.AutoSize = true;
             this.LblConfirmacionContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblConfirmacionContraseña.Location = new System.Drawing.Point(33, 110);
+            this.LblConfirmacionContraseña.Location = new System.Drawing.Point(12, 99);
             this.LblConfirmacionContraseña.Name = "LblConfirmacionContraseña";
             this.LblConfirmacionContraseña.Size = new System.Drawing.Size(162, 20);
             this.LblConfirmacionContraseña.TabIndex = 8;
@@ -71,7 +72,7 @@
             // 
             this.LblContraseñaNueva.AutoSize = true;
             this.LblContraseñaNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblContraseñaNueva.Location = new System.Drawing.Point(45, 38);
+            this.LblContraseñaNueva.Location = new System.Drawing.Point(24, 27);
             this.LblContraseñaNueva.Name = "LblContraseñaNueva";
             this.LblContraseñaNueva.Size = new System.Drawing.Size(139, 20);
             this.LblContraseñaNueva.TabIndex = 7;
@@ -80,22 +81,24 @@
             // txtConfirmacionContrasena
             // 
             this.txtConfirmacionContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmacionContrasena.Location = new System.Drawing.Point(61, 133);
+            this.txtConfirmacionContrasena.Location = new System.Drawing.Point(40, 122);
             this.txtConfirmacionContrasena.Name = "txtConfirmacionContrasena";
             this.txtConfirmacionContrasena.PasswordChar = '*';
             this.txtConfirmacionContrasena.Size = new System.Drawing.Size(106, 26);
             this.txtConfirmacionContrasena.TabIndex = 6;
             this.txtConfirmacionContrasena.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtConfirmacionContrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfirmacionContrasena_KeyPress);
             // 
             // txtContrasenaNueva
             // 
             this.txtContrasenaNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenaNueva.Location = new System.Drawing.Point(61, 61);
+            this.txtContrasenaNueva.Location = new System.Drawing.Point(40, 50);
             this.txtContrasenaNueva.Name = "txtContrasenaNueva";
             this.txtContrasenaNueva.PasswordChar = '*';
             this.txtContrasenaNueva.Size = new System.Drawing.Size(106, 26);
             this.txtContrasenaNueva.TabIndex = 5;
             this.txtContrasenaNueva.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtContrasenaNueva.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContrasenaNueva_KeyPress);
             // 
             // errorContrasena
             // 
@@ -152,7 +155,8 @@
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(228, 265);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(190, 243);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.LblConfirmacionContraseña);
             this.Controls.Add(this.LblContraseñaNueva);

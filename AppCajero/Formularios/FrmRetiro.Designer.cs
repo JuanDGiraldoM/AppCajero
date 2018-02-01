@@ -39,10 +39,10 @@
             this.cbxCuentaOrigen = new System.Windows.Forms.ComboBox();
             this.errorValor = new System.Windows.Forms.ErrorProvider(this.components);
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
-            this.oleDbDataAdapter = new System.Data.OleDb.OleDbDataAdapter();
             this.oleDbConnection = new System.Data.OleDb.OleDbConnection();
-            this.oleDbCommand1 = new System.Data.OleDb.OleDbCommand();
+            this.oleDbDataAdapter = new System.Data.OleDb.OleDbDataAdapter();
             this.oleDbCommand2 = new System.Data.OleDb.OleDbCommand();
+            this.oleDbCommand1 = new System.Data.OleDb.OleDbCommand();
             ((System.ComponentModel.ISupportInitialize)(this.errorValor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,6 +130,11 @@
     "e), Retiros";
             this.oleDbSelectCommand1.Connection = this.oleDbConnection;
             // 
+            // oleDbConnection
+            // 
+            this.oleDbConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bin\\Debug\\Database." +
+    "accdb";
+            // 
             // oleDbDataAdapter
             // 
             this.oleDbDataAdapter.InsertCommand = this.oleDbCommand2;
@@ -154,16 +159,12 @@
                         new System.Data.Common.DataColumnMapping("fecha", "fecha")})});
             this.oleDbDataAdapter.UpdateCommand = this.oleDbCommand1;
             // 
-            // oleDbConnection
-            // 
-            this.oleDbConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bin\\Debug\\Database." +
-    "accdb";
-            // 
             // FrmRetiro
             // 
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(358, 264);
             this.Controls.Add(this.btnCancelar);

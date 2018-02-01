@@ -37,6 +37,8 @@
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbConnection = new System.Data.OleDb.OleDbConnection();
             this.oleDbDataAdapter = new System.Data.OleDb.OleDbDataAdapter();
+            this.oleDbCommand2 = new System.Data.OleDb.OleDbCommand();
+            this.oleDbCommand1 = new System.Data.OleDb.OleDbCommand();
             this.btn1 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn0 = new System.Windows.Forms.Button();
@@ -49,15 +51,13 @@
             this.btn5 = new System.Windows.Forms.Button();
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.errorContrasena = new System.Windows.Forms.ErrorProvider(this.components);
-            this.oleDbCommand1 = new System.Data.OleDb.OleDbCommand();
-            this.oleDbCommand2 = new System.Data.OleDb.OleDbCommand();
             ((System.ComponentModel.ISupportInitialize)(this.errorContrasena)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 38);
+            this.label1.Location = new System.Drawing.Point(9, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 20);
@@ -66,36 +66,42 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(217, 114);
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Location = new System.Drawing.Point(172, 87);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(112, 35);
             this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(217, 159);
+            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Location = new System.Drawing.Point(172, 132);
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(112, 35);
             this.btnBorrar.TabIndex = 3;
             this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(217, 203);
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Location = new System.Drawing.Point(172, 176);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(112, 35);
             this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // oleDbSelectCommand1
@@ -131,8 +137,8 @@
             // 
             // btn1
             // 
-            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn1.Location = new System.Drawing.Point(43, 100);
+            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn1.Location = new System.Drawing.Point(13, 68);
             this.btn1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(45, 46);
@@ -144,8 +150,8 @@
             // 
             // btn2
             // 
-            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn2.Location = new System.Drawing.Point(96, 100);
+            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2.Location = new System.Drawing.Point(66, 68);
             this.btn2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(45, 46);
@@ -157,8 +163,8 @@
             // 
             // btn0
             // 
-            this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn0.Location = new System.Drawing.Point(96, 264);
+            this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn0.Location = new System.Drawing.Point(66, 232);
             this.btn0.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(45, 46);
@@ -170,8 +176,8 @@
             // 
             // btn6
             // 
-            this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn6.Location = new System.Drawing.Point(149, 153);
+            this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn6.Location = new System.Drawing.Point(119, 121);
             this.btn6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(45, 46);
@@ -183,8 +189,8 @@
             // 
             // btn9
             // 
-            this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn9.Location = new System.Drawing.Point(149, 208);
+            this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn9.Location = new System.Drawing.Point(119, 176);
             this.btn9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(45, 46);
@@ -196,8 +202,8 @@
             // 
             // btn3
             // 
-            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn3.Location = new System.Drawing.Point(149, 100);
+            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn3.Location = new System.Drawing.Point(119, 68);
             this.btn3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(45, 46);
@@ -209,8 +215,8 @@
             // 
             // btn8
             // 
-            this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn8.Location = new System.Drawing.Point(96, 208);
+            this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn8.Location = new System.Drawing.Point(66, 176);
             this.btn8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(45, 46);
@@ -222,8 +228,8 @@
             // 
             // btn4
             // 
-            this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn4.Location = new System.Drawing.Point(43, 153);
+            this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn4.Location = new System.Drawing.Point(13, 121);
             this.btn4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(45, 46);
@@ -235,8 +241,8 @@
             // 
             // btn7
             // 
-            this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn7.Location = new System.Drawing.Point(43, 208);
+            this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn7.Location = new System.Drawing.Point(13, 176);
             this.btn7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(45, 46);
@@ -248,8 +254,8 @@
             // 
             // btn5
             // 
-            this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn5.Location = new System.Drawing.Point(96, 153);
+            this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn5.Location = new System.Drawing.Point(66, 121);
             this.btn5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(45, 46);
@@ -261,12 +267,13 @@
             // 
             // txtContrasena
             // 
+            this.txtContrasena.BackColor = System.Drawing.Color.White;
             this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasena.Location = new System.Drawing.Point(36, 61);
+            this.txtContrasena.Location = new System.Drawing.Point(13, 34);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.ReadOnly = true;
-            this.txtContrasena.Size = new System.Drawing.Size(158, 26);
+            this.txtContrasena.Size = new System.Drawing.Size(151, 26);
             this.txtContrasena.TabIndex = 34;
             // 
             // errorContrasena
@@ -278,8 +285,9 @@
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(361, 344);
+            this.ClientSize = new System.Drawing.Size(297, 292);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btn2);

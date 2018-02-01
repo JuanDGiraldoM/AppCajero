@@ -33,7 +33,6 @@ namespace AppCajero.Formularios
                 string num_cuenta = cbxCuentaOrigen.SelectedItem.ToString();
                 double saldo_cuenta;
 
-
                 oleDbConnection.Open();
                 oleDbDataAdapter.SelectCommand.Connection = oleDbConnection;
                 oleDbDataAdapter.SelectCommand.CommandText = "select * from cuentas where numero_cuenta = '" + num_cuenta + "'";
@@ -43,11 +42,12 @@ namespace AppCajero.Formularios
                 {
                     saldo_cuenta = double.Parse(cuenta["saldo"].ToString());
                     MessageBox.Show("Transacción Consulta de Saldo\n\nCuenta :   " + num_cuenta + "\tSaldo: " + saldo_cuenta.ToString("C") + "\nFecha: " + fecha, "Comprobante");
+                    oleDbConnection.Close();
                     Close();
 
                 }
                 else
-                    Console.WriteLine("Ha ocurrido un error con la cuenta");
+                    MessageBox.Show("Ha ocurrido un error con la cuenta");
 
                 oleDbConnection.Close();
             }

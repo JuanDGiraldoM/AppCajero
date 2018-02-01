@@ -132,12 +132,12 @@ namespace AppCajero.Formularios
                             saldo_cuenta2 = double.Parse(cuenta["saldo"].ToString()) + valor_transf;
                             oleDbDataAdapter.UpdateCommand.CommandText = "update cuentas set saldo = " + saldo_cuenta2 + " where numero_cuenta = '" + cuenta_destino + "'";
                             oleDbDataAdapter.UpdateCommand.ExecuteNonQuery();
-                            oleDbDataAdapter.InsertCommand.CommandText = "insert into transacciones (cuenta_origen, cuenta_destino, valor_transferencia, fecha) values ('" + cuenta_origen + "', '" + cuenta_destino + "', '" + valor_transf.ToString("C") + "', '" + fecha + "')";
+                            oleDbDataAdapter.InsertCommand.CommandText = "insert into transferencias (cuenta_origen, cuenta_destino, valor_transferencia, fecha) values ('" + cuenta_origen + "', '" + cuenta_destino + "', '" + valor_transf.ToString("C") + "', '" + fecha + "')";
                             oleDbDataAdapter.InsertCommand.ExecuteNonQuery();
 
                             MessageBox.Show("Transferencia Exitosa", "Éxito");
-                            MessageBox.Show("Transacción de Transferencia\n\nCuenta origen:   " + cuenta_origen + "\tSaldo: " + saldo_cuenta1.ToString("C") + "\nCuenta destino: " + cuenta_destino + "\tSaldo: " + saldo_cuenta2.ToString("C") + "\nFecha: " + fecha, "Comprobante");
-                            Limpiar();
+                            MessageBox.Show("Transacción de Transferencia\n\nCuenta origen:   " + cuenta_origen + "\tSaldo: " + saldo_cuenta1.ToString("C") + "\nCuenta destino: " + cuenta_destino + "\tSaldo: " + saldo_cuenta2.ToString("C") + "\nFecha: " + fecha, "Comprobante");                            
+                            Close();
                         }
                         else
                             errorValor.SetError(txtValor, "Cantidad no disponible\nSaldo: " + cuenta["saldo"].ToString());

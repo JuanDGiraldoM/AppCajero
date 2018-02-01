@@ -62,7 +62,7 @@ namespace AppCajero.Formularios
 
                             MessageBox.Show("Retiro Exitoso", "Éxito");
                             MessageBox.Show("Transacción de Retiro\n\nCuenta :   " + cuenta_retiro + "\tSaldo: " + saldo_cuenta.ToString("C") + "\nFecha: " + fecha, "Comprobante");
-                            Limpiar();
+                            Close();
                         }
                         else
                             errorValor.SetError(txtValor, "Cantidad no disponible\nSaldo: " + cuenta["saldo"].ToString());

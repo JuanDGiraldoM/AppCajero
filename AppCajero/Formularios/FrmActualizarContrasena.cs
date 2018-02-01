@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -76,14 +77,18 @@ namespace AppCajero.Formularios
             {
                 try
                 {
-                    oleDbConnection.Open();
-                    oleDbDataAdapter.UpdateCommand.CommandText = "update clientes set contrasena = '" + txtContrasenaNueva.Text + "' where cedula = '" + cedula + "'";
-                    oleDbDataAdapter.UpdateCommand.Connection = oleDbConnection;
-                    oleDbDataAdapter.UpdateCommand.ExecuteNonQuery();
-                    oleDbConnection.Close();
+                    using (MD5 md5Hash = MD5.Create())
+                    {
+                        oleDbConnection.Open();
+                        string clave = Utilidades.GetMd5Hash(md5Hash, txtContrasenaNueva.Text);
+                        oleDbDataAdapter.UpdateCommand.CommandText = "update clientes set contrasena = '" + clave + "' where cedula = '" + cedula + "'";
+                        oleDbDataAdapter.UpdateCommand.Connection = oleDbConnection;
+                        oleDbDataAdapter.UpdateCommand.ExecuteNonQuery();
+                        oleDbConnection.Close();
 
-                    MessageBox.Show("Contraseña actualizada", "Éxito");
-                    Close();
+                        MessageBox.Show("Contraseña actualizada", "Éxito");
+                        Close();
+                    }
                 }
                 catch (Exception exc)
                 {

@@ -44,8 +44,8 @@
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbConnection = new System.Data.OleDb.OleDbConnection();
             this.oleDbDataAdapter = new System.Data.OleDb.OleDbDataAdapter();
-            this.oleDbCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbCommand2 = new System.Data.OleDb.OleDbCommand();
+            this.oleDbCommand1 = new System.Data.OleDb.OleDbCommand();
             ((System.ComponentModel.ISupportInitialize)(this.errorDestino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorValor)).BeginInit();
             this.SuspendLayout();
@@ -190,6 +190,7 @@
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(357, 294);
             this.Controls.Add(this.btnCancelar);

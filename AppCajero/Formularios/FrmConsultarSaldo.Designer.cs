@@ -34,8 +34,8 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cbxCuentaOrigen = new System.Windows.Forms.ComboBox();
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
-            this.oleDbDataAdapter = new System.Data.OleDb.OleDbDataAdapter();
             this.oleDbConnection = new System.Data.OleDb.OleDbConnection();
+            this.oleDbDataAdapter = new System.Data.OleDb.OleDbDataAdapter();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -87,6 +87,11 @@
     "                   Cuentas ON Clientes.cedula = Cuentas.cedula_cliente)";
             this.oleDbSelectCommand1.Connection = this.oleDbConnection;
             // 
+            // oleDbConnection
+            // 
+            this.oleDbConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bin\\Debug\\Database." +
+    "accdb";
+            // 
             // oleDbDataAdapter
             // 
             this.oleDbDataAdapter.SelectCommand = this.oleDbSelectCommand1;
@@ -105,21 +110,21 @@
                         new System.Data.Common.DataColumnMapping("cedula_cliente", "cedula_cliente"),
                         new System.Data.Common.DataColumnMapping("saldo", "saldo")})});
             // 
-            // oleDbConnection
-            // 
-            this.oleDbConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\bin\\Debug\\Database." +
-    "accdb";
-            // 
             // FrmConsultarSaldo
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(284, 185);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cbxCuentaOrigen);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmConsultarSaldo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Saldo";

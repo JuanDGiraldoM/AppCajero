@@ -22,8 +22,8 @@ namespace AppCajero
             InitializeComponent();
             sync = SynchronizationContext.Current;
             ClientSize = BackgroundImage.Size;
-            BackColor = Color.Black;
-            TransparencyKey = Color.Black;
+            BackColor = Color.DarkSlateGray;
+            TransparencyKey = Color.DarkSlateGray;
         }
 
         private void SplashScreen_Load(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace AppCajero
                     MessageBox.Show(this, "No se puede continuar sin Base de Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Close();
                 }
-            }            
+            }
             sync.Post(a =>
             {
                 Program.connection = oleDbConnection.ConnectionString;

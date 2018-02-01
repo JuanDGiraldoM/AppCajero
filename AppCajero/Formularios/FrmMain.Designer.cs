@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btnRetiro = new System.Windows.Forms.Button();
             this.btnActualizarContrasena = new System.Windows.Forms.Button();
-            this.lblNombre = new System.Windows.Forms.Label();
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbConnection1 = new System.Data.OleDb.OleDbConnection();
             this.oleDbUpdateCommand1 = new System.Data.OleDb.OleDbCommand();
@@ -39,6 +38,7 @@
             this.oleDbDataAdapter1 = new System.Data.OleDb.OleDbDataAdapter();
             this.btnTransferencia = new System.Windows.Forms.Button();
             this.btnConsultarSaldo = new System.Windows.Forms.Button();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnRetiro
@@ -48,7 +48,7 @@
             this.btnRetiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRetiro.ForeColor = System.Drawing.Color.White;
             this.btnRetiro.Image = global::AppCajero.Properties.Resources.arrow_right;
-            this.btnRetiro.Location = new System.Drawing.Point(20, 300);
+            this.btnRetiro.Location = new System.Drawing.Point(20, 120);
             this.btnRetiro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRetiro.Name = "btnRetiro";
             this.btnRetiro.Size = new System.Drawing.Size(405, 95);
@@ -64,7 +64,7 @@
             this.btnActualizarContrasena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarContrasena.ForeColor = System.Drawing.Color.White;
             this.btnActualizarContrasena.Image = global::AppCajero.Properties.Resources.arrow_left;
-            this.btnActualizarContrasena.Location = new System.Drawing.Point(860, 90);
+            this.btnActualizarContrasena.Location = new System.Drawing.Point(670, 320);
             this.btnActualizarContrasena.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnActualizarContrasena.Name = "btnActualizarContrasena";
             this.btnActualizarContrasena.Size = new System.Drawing.Size(405, 95);
@@ -72,15 +72,6 @@
             this.btnActualizarContrasena.Text = "Actualizar Contraseña";
             this.btnActualizarContrasena.UseVisualStyleBackColor = false;
             this.btnActualizarContrasena.Click += new System.EventHandler(this.btnActualizarContrasena_Click);
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(18, 675);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(0, 20);
-            this.lblNombre.TabIndex = 4;
             // 
             // oleDbSelectCommand1
             // 
@@ -131,7 +122,7 @@
             this.btnTransferencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransferencia.ForeColor = System.Drawing.Color.White;
             this.btnTransferencia.Image = global::AppCajero.Properties.Resources.arrow_right;
-            this.btnTransferencia.Location = new System.Drawing.Point(20, 510);
+            this.btnTransferencia.Location = new System.Drawing.Point(20, 320);
             this.btnTransferencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTransferencia.Name = "btnTransferencia";
             this.btnTransferencia.Size = new System.Drawing.Size(405, 95);
@@ -146,8 +137,8 @@
             this.btnConsultarSaldo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnConsultarSaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultarSaldo.ForeColor = System.Drawing.Color.White;
-            this.btnConsultarSaldo.Image = global::AppCajero.Properties.Resources.arrow_right;
-            this.btnConsultarSaldo.Location = new System.Drawing.Point(20, 90);
+            this.btnConsultarSaldo.Image = global::AppCajero.Properties.Resources.arrow_left;
+            this.btnConsultarSaldo.Location = new System.Drawing.Point(670, 120);
             this.btnConsultarSaldo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConsultarSaldo.Name = "btnConsultarSaldo";
             this.btnConsultarSaldo.Size = new System.Drawing.Size(405, 95);
@@ -156,16 +147,25 @@
             this.btnConsultarSaldo.UseVisualStyleBackColor = false;
             this.btnConsultarSaldo.Click += new System.EventHandler(this.btnConsultarSaldo_Click);
             // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(16, 22);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(51, 20);
+            this.lblNombre.TabIndex = 8;
+            this.lblNombre.Text = "Name";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::AppCajero.Properties.Resources.dinero;
+            this.BackgroundImage = global::AppCajero.Properties.Resources.dinero_back1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1284, 661);
-            this.Controls.Add(this.btnTransferencia);
+            this.ClientSize = new System.Drawing.Size(1084, 461);
             this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.btnTransferencia);
             this.Controls.Add(this.btnActualizarContrasena);
             this.Controls.Add(this.btnRetiro);
             this.Controls.Add(this.btnConsultarSaldo);
@@ -187,12 +187,12 @@
         private System.Windows.Forms.Button btnConsultarSaldo;
         private System.Windows.Forms.Button btnRetiro;
         private System.Windows.Forms.Button btnActualizarContrasena;
-        private System.Windows.Forms.Label lblNombre;
         private System.Data.OleDb.OleDbCommand oleDbSelectCommand1;
         private System.Data.OleDb.OleDbConnection oleDbConnection1;
         private System.Data.OleDb.OleDbCommand oleDbUpdateCommand1;
         private System.Data.OleDb.OleDbCommand oleDbDeleteCommand1;
         private System.Data.OleDb.OleDbDataAdapter oleDbDataAdapter1;
         private System.Windows.Forms.Button btnTransferencia;
+        private System.Windows.Forms.Label lblNombre;
     }
 }
